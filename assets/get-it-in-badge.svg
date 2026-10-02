@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" role="img" aria-label="Get It In With Glenn community badge">
+  <defs>
+    <path id="topArc" d="M 92 240 A 148 148 0 0 1 388 240"/>
+    <path id="botArc" d="M 76 240 A 164 164 0 0 0 404 240"/>
+  </defs>
+  <circle cx="240" cy="240" r="234" fill="#0F1D2B"/>
+  <circle cx="240" cy="240" r="218" fill="none" stroke="#C9A05B" stroke-width="5"/>
+  <circle cx="240" cy="240" r="202" fill="none" stroke="#C9A05B" stroke-width="1.5" stroke-opacity="0.5"/>
+
+  <text font-family="Inter, Arial, sans-serif" font-weight="700" font-size="44" letter-spacing="10" fill="#F6F2EA">
+    <textPath href="#topArc" startOffset="50%" text-anchor="middle">GET IT IN</textPath>
+  </text>
+  <text font-family="Inter, Arial, sans-serif" font-weight="700" font-size="34" letter-spacing="9" fill="#C9A05B">
+    <textPath href="#botArc" startOffset="50%" text-anchor="middle">WITH GLENN</textPath>
+  </text>
+
+  <!-- barbell -->
+  <g>
+    <line x1="140" y1="240" x2="340" y2="240" stroke="#F6F2EA" stroke-width="10" stroke-linecap="round"/>
+    <rect x="152" y="204" width="22" height="72" rx="8" fill="#C9A05B"/>
+    <rect x="180" y="216" width="16" height="48" rx="7" fill="#C9A05B"/>
+    <rect x="306" y="204" width="22" height="72" rx="8" fill="#C9A05B"/>
+    <rect x="284" y="216" width="16" height="48" rx="7" fill="#C9A05B"/>
+  </g>
+  <!-- seam stitches under the bar -->
+  <path d="M 190 300 Q 240 284 290 300" fill="none" stroke="#BE3E2B" stroke-width="4" stroke-linecap="round"/>
+  <g stroke="#BE3E2B" stroke-width="3.4" stroke-linecap="round">
+    <line x1="207" y1="288" x2="211" y2="298"/>
+    <line x1="238" y1="284" x2="240" y2="295"/>
+    <line x1="269" y1="288" x2="266" y2="298"/>
+  </g>
+  <!-- pennant finial above -->
+  <g transform="translate(216,126) scale(0.38)">
+    <line x1="27" y1="18" x2="27" y2="104" stroke="#F6F2EA" stroke-width="7" stroke-linecap="round"/>
+    <path d="M 34 26 Q 74 29 102 41 Q 70 49 34 59 Z" fill="#BE3E2B"/>
+  </g>
+  <text x="240" y="341" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-weight="700" font-size="17" letter-spacing="6" fill="#5B6B7A">EST · 773</text>
+</svg>

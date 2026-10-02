@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 120" role="img" aria-label="The Glenn Standard — Strength and Performance, Chicago">
+  <rect width="120" height="120" rx="26" fill="#0F1D2B"/>
+  <line x1="30" y1="20" x2="30" y2="102" stroke="#F6F2EA" stroke-width="5.5" stroke-linecap="round"/>
+  <circle cx="30" cy="14" r="4.5" fill="#C9A05B"/>
+  <path d="M 36 26 Q 74 29 102 41 Q 70 49 36 59 Z" fill="#C9A05B"/>
+  <g stroke="#BE3E2B" stroke-width="2.8" stroke-linecap="round">
+    <line x1="50" y1="37" x2="54" y2="44"/>
+    <line x1="62" y1="38.5" x2="66" y2="45.5"/>
+    <line x1="74" y1="40" x2="78" y2="47"/>
+  </g>
+  <text x="142" y="34" font-family="Inter, Arial, sans-serif" font-weight="600" font-size="13" letter-spacing="6" fill="#BE3E2B">THE</text>
+  <text x="140" y="70" font-family="Fraunces, Georgia, 'Times New Roman', serif" font-weight="900" font-size="36" letter-spacing="1.5" fill="#0F1D2B">GLENN STANDARD</text>
+  <text x="142" y="98" font-family="Inter, Arial, sans-serif" font-weight="600" font-size="12.5" letter-spacing="4.2" fill="#5B6B7A">STRENGTH &amp; PERFORMANCE &#183; CHICAGO</text>
+</svg>
