@@ -108,7 +108,7 @@ h3 { font-size: 1.25rem; }
   letter-spacing: 0.04em;
 }
 .brand:hover { color: var(--bone); }
-.brand .mono { width: 38px; height: 38px; flex: none; }
+.brand .mono { width: 40px; height: 40px; flex: none; }
 .brand small {
   display: block;
   font-family: var(--font-body);
@@ -214,6 +214,16 @@ h3 { font-size: 1.25rem; }
 }
 
 .hero .lede { margin: 22px 0 36px; }
+
+/* Home hero: full-size logo beside the headline, where its detail can be read */
+.hero-split { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 64px; align-items: center; }
+.hero-split .cred-bar { grid-column: 1 / -1; }
+.hero-mark { height: clamp(300px, 32vw, 430px); width: auto; animation: mark-in 0.9s ease-out both; }
+@keyframes mark-in { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+@media (max-width: 900px) {
+  .hero-split { grid-template-columns: 1fr; }
+  .hero-mark { display: none; }
+}
 
 .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
 
@@ -566,6 +576,7 @@ details.faq p { margin-top: 12px; color: var(--slate); font-size: 0.96rem; }
 .reveal.in { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
+  .hero-mark { animation: none; }
   html { scroll-behavior: auto; }
 }
 
