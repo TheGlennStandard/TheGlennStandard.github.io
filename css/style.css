@@ -220,10 +220,16 @@ h3 { font-size: 1.25rem; }
 .hero-split .cred-bar { grid-column: 1 / -1; }
 .hero-mark { height: clamp(300px, 32vw, 430px); width: auto; animation: mark-in 0.9s ease-out both; }
 @keyframes mark-in { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+/* Tablet/phone: the logo sits beside the headline; everything else runs full width as before */
 @media (max-width: 900px) {
-  .hero-split { grid-template-columns: 1fr; }
-  .hero-mark { display: none; }
+  .hero-split { column-gap: 16px; }
+  .hero-copy { display: contents; }
+  .hero-copy > * { grid-column: 1 / -1; }
+  .hero-copy > h1 { grid-column: 1; grid-row: 2; }
+  .hero-mark { grid-column: 2; grid-row: 2; height: clamp(96px, 27vw, 240px); }
 }
+/* Below 360px the headline needs the full width to stay on two lines */
+@media (max-width: 359px) { .hero-mark { display: none; } }
 
 .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
 
