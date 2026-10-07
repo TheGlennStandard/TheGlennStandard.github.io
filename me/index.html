@@ -87,6 +87,15 @@
           <strong>Small logo master</strong><span>Vector version of the ball-only logo.</span><em>SVG</em></a>
       </div>
 
+      <h2>Stickers &amp; screen savers</h2>
+      <div class="docs" id="stickers"></div>
+
+      <h2>Sticker artwork</h2>
+      <div class="cards" id="art"></div>
+
+      <h2>Wallpapers &amp; lock screens</h2>
+      <div class="cards" id="wallpapers"></div>
+
       <h2>Social cards</h2>
       <div class="cards" id="cards"></div>
 
@@ -123,26 +132,30 @@
 
   async function unlock(key) {
     const manifest = JSON.parse(new TextDecoder().decode(await open(key, 'vault/manifest.bin'))); // throws on wrong password
-    const docs = $('docs'), cards = $('cards');
-    docs.innerHTML = cards.innerHTML = '';
+    // group name in the vault -> the box on the page it belongs in
+    const boxes = { Documents: $('docs'), Stickers: $('stickers'), 'Sticker artwork': $('art'),
+                    Wallpapers: $('wallpapers'), 'Social cards': $('cards') };
+    const imageGroups = new Set(['Sticker artwork', 'Wallpapers', 'Social cards']);
+    Object.values(boxes).forEach(b => { b.innerHTML = ''; });
     await Promise.all(manifest.map(async f => {
+      const box = boxes[f.group] || boxes.Documents;
       const url = URL.createObjectURL(new Blob([await open(key, `vault/${f.id}.bin`)], { type: f.type }));
       const a = document.createElement('a');
       a.href = url; a.target = '_blank'; a.rel = 'noopener';
       a.dataset.order = manifest.indexOf(f);
-      if (f.group === 'Social cards') {
+      if (imageGroups.has(f.group)) {
         a.download = f.name;
-        const img = document.createElement('img'); img.src = url; img.alt = f.title;
-        a.append(img); cards.append(a);
+        const img = document.createElement('img'); img.src = url; img.alt = f.title; img.title = f.title;
+        a.append(img);
       } else {
         a.className = 'doc';
-        a.innerHTML = `<strong></strong><span></span><em>PDF · ${Math.round(f.size / 1024)} KB</em>`;
+        a.innerHTML = `<strong></strong><span></span><em>${f.name.split('.').pop().toUpperCase()} · ${Math.round(f.size / 1024)} KB</em>`;
         a.querySelector('strong').textContent = f.title;
         a.querySelector('span').textContent = f.desc;
-        docs.append(a);
       }
+      box.append(a);
     }));
-    for (const box of [docs, cards]) [...box.children].sort((x, y) => x.dataset.order - y.dataset.order).forEach(n => box.append(n));
+    for (const box of Object.values(boxes)) [...box.children].sort((x, y) => x.dataset.order - y.dataset.order).forEach(n => box.append(n));
     $('lock').hidden = true; $('vault').hidden = false;
   }
 
