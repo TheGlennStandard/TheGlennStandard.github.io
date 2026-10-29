@@ -48,7 +48,7 @@
 <main class="me">
   <div class="wrap">
     <div class="me-head">
-      <img src="../assets/ball-mark.svg" alt="The Glenn Standard logo">
+      <img src="../assets/shield-icon.svg" alt="The Glenn Standard logo">
       <div>
         <h1>My toolkit</h1>
         <p>Everything I hand out, print or post, always the latest version.</p>
@@ -73,18 +73,24 @@
 
       <h2>Logo</h2>
       <div class="docs">
-        <a class="doc" href="../assets/logo/the-glenn-standard-logo-square.png" target="_blank" rel="noopener">
-          <strong>Main logo on dark square</strong><span>Profile pictures, slides, anywhere there's room.</span><em>PNG · 1024 px</em></a>
-        <a class="doc" href="../assets/logo/the-glenn-standard-mark-transparent.png" target="_blank" rel="noopener">
-          <strong>Main logo, no background</strong><span>For photos, shirts and other designs.</span><em>PNG · transparent</em></a>
-        <a class="doc" href="../assets/logo/the-glenn-standard-ball.png" target="_blank" rel="noopener">
-          <strong>Small logo (ball only)</strong><span>For small spaces: avatars, favicons, corners, embroidery.</span><em>PNG · transparent</em></a>
-        <a class="doc" href="../assets/logo/the-glenn-standard-lockup.png" target="_blank" rel="noopener">
-          <strong>Logo + name</strong><span>Wide version with THE GLENN STANDARD written out.</span><em>PNG</em></a>
+        <a class="doc" href="../assets/logo/the-glenn-standard-shield-on-midnight.png" target="_blank" rel="noopener">
+          <strong>Shield on Midnight</strong><span>Profile pictures, slides, anywhere there's room.</span><em>PNG · 1024 px</em></a>
+        <a class="doc" href="../assets/logo/the-glenn-standard-shield-on-bone.png" target="_blank" rel="noopener">
+          <strong>Shield on Bone</strong><span>Same badge on the light ground.</span><em>PNG · 1024 px</em></a>
+        <a class="doc" href="../assets/logo/the-glenn-standard-shield.png" target="_blank" rel="noopener">
+          <strong>Shield, no background</strong><span>For photos, shirts and other designs.</span><em>PNG · transparent</em></a>
+        <a class="doc" href="../assets/logo/the-glenn-standard-shield-red.png" target="_blank" rel="noopener">
+          <strong>Shield, Red and Gold</strong><span>The livelier colorway, for tees and stickers.</span><em>PNG · transparent</em></a>
+        <a class="doc" href="../assets/logo/the-glenn-standard-shield-knockout.png" target="_blank" rel="noopener">
+          <strong>Shield, one color on light</strong><span>Single color, for forms, receipts and one color print.</span><em>PNG · transparent</em></a>
+        <a class="doc" href="../assets/logo/the-glenn-standard-shield-icon.png" target="_blank" rel="noopener">
+          <strong>Small shield</strong><span>For small spaces: avatars, favicons, corners.</span><em>PNG · transparent</em></a>
         <a class="doc" href="../assets/the-glenn-standard-logo.svg" target="_blank" rel="noopener">
-          <strong>Main logo master</strong><span>Sharp at any size. Give to printers, embroiderers and designers.</span><em>SVG</em></a>
-        <a class="doc" href="../assets/ball-mark.svg" target="_blank" rel="noopener">
-          <strong>Small logo master</strong><span>Vector version of the ball-only logo.</span><em>SVG</em></a>
+          <strong>Shield master</strong><span>Sharp at any size. Give to printers, embroiderers and designers.</span><em>SVG</em></a>
+        <a class="doc" href="../assets/shield-hat.svg" target="_blank" rel="noopener">
+          <strong>Hat and shorts version</strong><span>Heavier lines for embroidery. Give to the embroiderer.</span><em>SVG</em></a>
+        <a class="doc" href="../assets/shield-icon.svg" target="_blank" rel="noopener">
+          <strong>Small shield master</strong><span>Vector version of the small shield.</span><em>SVG</em></a>
       </div>
 
       <h2>Stickers &amp; screen savers</h2>
@@ -98,6 +104,9 @@
 
       <h2>Social cards</h2>
       <div class="cards" id="cards"></div>
+
+      <h2>Logo documentation</h2>
+      <div class="docs" id="logodocs"></div>
 
       <p class="note">Tap anything to open it in your phone's viewer; from there use Share or Save. This page isn't linked anywhere on the site and is hidden from search engines. <button class="linkish" id="forget" type="button">Lock and forget this device</button></p>
     </div>
@@ -134,7 +143,7 @@
     const manifest = JSON.parse(new TextDecoder().decode(await open(key, 'vault/manifest.bin'))); // throws on wrong password
     // group name in the vault -> the box on the page it belongs in
     const boxes = { Documents: $('docs'), Stickers: $('stickers'), 'Sticker artwork': $('art'),
-                    Wallpapers: $('wallpapers'), 'Social cards': $('cards') };
+                    Wallpapers: $('wallpapers'), 'Social cards': $('cards'), 'Logo documentation': $('logodocs') };
     const imageGroups = new Set(['Sticker artwork', 'Wallpapers', 'Social cards']);
     Object.values(boxes).forEach(b => { b.innerHTML = ''; });
     await Promise.all(manifest.map(async f => {
