@@ -7,7 +7,7 @@ Tips: shoot horizontal (16:9 or 4:3) unless marked tall. Natural light, real gym
 
 ## Filled so far (Nov 10, from D'Vante's iCloud album)
 
-coach-d-portrait, about-coach-d, athletes-training, athletes-team-room, athletes-rotational, baseball-hitting, results-team-lift, results-game-day, blog-why-i-coach, blog-what-baseball-taught-me.
+coach-d-portrait, about-coach-d, athletes-training, athletes-team-room, baseball-hitting, results-team-lift, results-game-day, blog-why-i-coach, blog-what-baseball-taught-me.
 
 Every other slot in the table below still shows its sport icon. To swap a photo, drop a new JPG with the same name here, or edit the crop in `tools/prep_photos.py` and rerun it.
 
