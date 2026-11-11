@@ -5,6 +5,12 @@ Until a photo exists, the page shows a clean sport icon in its place. Nothing br
 
 Tips: shoot horizontal (16:9 or 4:3) unless marked tall. Natural light, real gym, real people in action. Show women and men athletes. Keep the barbell and the sport in the frame. Under 400 KB per file is plenty (phone photos can be shrunk at squoosh.app). Get a yes from anyone who is recognizable.
 
+## Filled so far (Nov 10, from D'Vante's iCloud album)
+
+coach-d-portrait, about-coach-d, athletes-training, athletes-team-room, athletes-rotational, baseball-hitting, results-team-lift, results-game-day, blog-why-i-coach, blog-what-baseball-taught-me.
+
+Every other slot in the table below still shows its sport icon. To swap a photo, drop a new JPG with the same name here, or edit the crop in `tools/prep_photos.py` and rerun it.
+
 | File | Shape | What to shoot | Used on |
 |---|---|---|---|
 | sport-baseball.jpg | square | Player mid throw or swing | Home grid |
